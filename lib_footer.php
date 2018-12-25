@@ -20,7 +20,14 @@
     <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
     <script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
     <script src="assets/libs/js/dashboard-ecommerce.js"></script>
-    <!-- dataTables -->
-    <script src="assets/vendor/dataTables/js/buttons.bootstrap4.min.js"></script>
+
+    <!-- DataTables -->
+    <link href="assets/vendor/dataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <script src="assets/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/vendor/dataTables/js/dataTables.bootstrap4.js"></script>
     <script src="assets/vendor/dataTables/js/data-table.js"></script>
-    <script src="assets/vendor/dataTables/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          $('#dataTables-example').dataTable();
+      });
+    </script>
