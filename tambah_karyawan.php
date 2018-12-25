@@ -11,7 +11,7 @@
 
         include 'lib_header.php';
     ?>
-    <title>Hal - Karyawan</title>
+    <title>Hal - Tambah Karyawan</title>
 </head>
 
 <body>
@@ -55,18 +55,22 @@
                                 <div class="card">
                                     <h5 class="card-header">Tambah karyawan</h5>
                                     <div class="card-body">
-                                        <form>
+                                        <form action="proses.php?aksi=tambah_karyawan" method="POST">
                                             <div class="form-group">
                                                 <label for="inputText3" class="col-form-label">Nama karyawan</label>
-                                                <input id="inputText3" type="text" class="form-control">
+                                                <input type="text" class="form-control" name="nama">
                                             </div>
                                             <div class="form-group">
                                                 <label for="input-select">Pilih bagian</label>
-                                                <select class="form-control" id="input-select">
-                                                    <option>--Pilih--</option>
+                                                <select class="form-control" name="bagian" required>
+                                                    <option value="">--Pilih--</option>
                                                     <option>Bagian produksi</option>
                                                     <option>Bagian finishing</option>
                                                 </select>
+                                            </div>
+                                            <div class="form-group">
+                                              <button class="btn btn-primary" type="submit">Simpan</button>
+                                              <button class="btn btn-danger" type="reset">Reset</button>
                                             </div>
                                         </form>
                                     </div>

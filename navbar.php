@@ -8,7 +8,7 @@
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item dropdown connection">
                             <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
-                                
+
                             </ul>
                         </li>
                         <li class="nav-item dropdown nav-user">
@@ -49,10 +49,10 @@
                                             <div id="submenu-1-2" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="index.html">Tambah Karyawan</a>
+                                                        <a class="nav-link" href="tambah_karyawan.php">Tambah Karyawan</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product.html">Lihat Data Karyawan</a>
+                                                        <a class="nav-link" href="karyawan.php">Lihat Data Karyawan</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -111,7 +111,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            
+
                             <li class="nav-divider">
                                 Penggajian
                             </li>

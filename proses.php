@@ -1,5 +1,5 @@
 <?php
-	
+
 	include 'include/db_config.php';
 
 	$aksi = $_GET['aksi'];
@@ -8,12 +8,12 @@
 		$nama = $_POST['nama'];
 		$bag = $_POST['bagian'];
 
-		$sql = "INSERT INTO tb_karyawan ('id','nama','bagian') VALUES ('','$nama','$bag')";
+		$sql = "INSERT INTO tb_karyawan VALUES ('','$nama','$bag')";
 		$result = mysqli_query($con, $sql);
 		if ($result) {
-			echo "berhasil tambah data";
+			header("location: karyawan.php")
 		} else {
-			echo "gagal tambah data";
+			
 		}
 	}
 
