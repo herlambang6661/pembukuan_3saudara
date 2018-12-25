@@ -49,7 +49,7 @@
                                             <div id="submenu-1-2" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="tambah_karyawan.php">Tambah Karyawan</a>
+                                                        <a class="nav-link" href="karyawan_tambah.php">Tambah Karyawan</a>
                                                     </li>
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="karyawan.php">Lihat Data Karyawan</a>
