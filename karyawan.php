@@ -59,6 +59,7 @@
                         <div class="card">
                             <h5 class="card-header">Tabel Karyawan</h5>
                             <div class="card-body">
+                                <a href="karyawan_tambah.php" class="btn btn-info"><i class="fa fa-plus"></i> Tambah Karyawan</a>
                                 <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example"><br><br>
                                     <thead>
@@ -83,8 +84,8 @@
                                         <td><center><?php echo $a['bagian']; ?><center></td>
                                         <td>
                                             <center>
-                                            <a href="karyawan_edit.php?id=<?php echo $a['id']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
-                                            <button onclick="hapus('<?php echo $a['id'] ?>','<?php echo $a['nama'] ?>')" data-toggle="tooltip" class="btn btn-danger"><i class="fa fa-gavel"></i>   Hapus</button>
+                                            <a href="karyawan_edit.php?id=<?php echo $a['id']; ?>"><button class="btn btn-outline-brand" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit Data"><i class="fa fa-edit"></i></button></a>
+                                            <button onclick="hapus('<?php echo $a['id'] ?>','<?php echo $a['nama'] ?>')" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus Data"><i class="fa fa-trash"></i></button>
                                             <script>
                                               function hapus(x,y){
                                                 swal({
