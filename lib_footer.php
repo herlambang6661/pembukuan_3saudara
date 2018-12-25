@@ -22,9 +22,10 @@
     <script src="assets/libs/js/dashboard-ecommerce.js"></script>
 
     <!-- DataTables -->
-    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <link href="assets/vendor/dataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <script src="assets/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/vendor/dataTables/js/dataTables.bootstrap4.js"></script>
+    <script src="assets/vendor/dataTables/js/data-table.js"></script>
     <script>
       $(document).ready(function () {
           $('#dataTables-example').dataTable();
