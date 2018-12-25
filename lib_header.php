@@ -16,5 +16,5 @@
 
 
     <!-- SWEET ALERT -->
-    <link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.min.css">
-    <script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="assets/sweetalert2/dist/sweetalert2.min.css">
+    <script src="assets/sweetalert2/dist/sweetalert2.min.js"></script>

@@ -27,7 +27,7 @@
 		if ($result) {
 			header("location: karyawan.php");
 		} else {
-			
+
 		}
 	}
 
@@ -36,9 +36,8 @@
 
 		$result = mysqli_query($con,"DELETE FROM tb_karyawan WHERE id='$id'");
 		if ($result) {
-			echo "berhasil hapus data";
+			header("location: karyawan.php");
 		} else {
-			echo "gagal hapus data";
 		}
 	}
 
