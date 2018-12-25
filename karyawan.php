@@ -35,14 +35,13 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Data Tables</h2>
-                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                            <h2 class="pageheader-title">Data Karyawan</h2>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Data Master</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Data Karyawan</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Lihat Data Karyawan</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -58,7 +57,7 @@
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Basic Table</h5>
+                            <h5 class="card-header">Tabel Karyawan</h5>
                             <div class="card-body">
                                 <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example"><br><br>
@@ -84,11 +83,7 @@
                                         <td><center><?php echo $a['bagian']; ?><center></td>
                                         <td>
                                             <center>
-<<<<<<< HEAD
                                             <a href="karyawan_edit.php?id=<?php echo $a['id']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
-                                            <a href="proses.php?ID=<?php echo $x['id_history']; ?>&aksi=hapushistory" onclick="return confirm('Yakin ingin menghapus <?php echo $x['nama_barang'] ?>?')"><button class="btn btn-danger"><i class="fa fa-gavel"></i>   Hapus</button></a>
-=======
-                                            <a href="edit_karyawan.php?id=<?php echo $a['id']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
                                             <button onclick="hapus('<?php echo $a['id'] ?>','<?php echo $a['nama'] ?>')" data-toggle="tooltip" class="btn btn-danger"><i class="fa fa-gavel"></i>   Hapus</button>
                                             <script>
                                               function hapus(x,y){
@@ -116,7 +111,6 @@
                                               }
                                             </script>
 
->>>>>>> 0504f6313490cdbabec5621b8f9a61895703e8a8
                                             </center>
                                         </td>
                                         </tr>

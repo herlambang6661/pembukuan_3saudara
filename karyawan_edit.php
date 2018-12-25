@@ -70,8 +70,8 @@
                                                 <label for="input-select">Pilih bagian</label>
                                                 <select class="form-control" name="bagian" required>
                                                     <option value="<?php echo $a['bagian'] ?>">-- <?php echo $a['bagian'] ?> --</option>
-                                                    <option value="bagian produksi">Bagian produksi</option>
-                                                    <option value="bagian finishing">Bagian finishing</option>
+                                                    <option value="Bagian Produksi">Bagian Produksi</option>
+                                                    <option value="Bagian Finishing">Bagian Finishing</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
