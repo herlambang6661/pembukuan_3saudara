@@ -20,3 +20,13 @@
     <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
     <script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
     <script src="assets/libs/js/dashboard-ecommerce.js"></script>
+
+    <!-- DataTables -->
+    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+      $(document).ready(function () {
+          $('#dataTables-example').dataTable();
+      });
+    </script>
