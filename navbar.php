@@ -58,13 +58,10 @@
                                             </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Ukuran</a>
+                                            <a class="nav-link" href="ukuran.php">Ukuran</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Ketebalan</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Harga</a>
+                                            <a class="nav-link" href="ketebalanHarga.php">Ketebalan & Harga</a>
                                         </li>
                                     </ul>
                                 </div>
