@@ -23,6 +23,9 @@
 
     <!-- DataTables -->
     <link href="assets/vendor/dataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="assets/vendor/dataTables/css/buttons.bootstrap4.css" rel="stylesheet" />
+    <link href="assets/vendor/dataTables/css/fixedHeader.bootstrap4.css" rel="stylesheet" />
+    <link href="assets/vendor/dataTables/css/select.bootstrap4.css" rel="stylesheet" />
     <script src="assets/dataTables/jquery.dataTables.js"></script>
     <script src="assets/vendor/dataTables/js/dataTables.bootstrap4.js"></script>
     <script src="assets/vendor/dataTables/js/data-table.js"></script>
