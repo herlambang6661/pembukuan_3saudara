@@ -85,7 +85,33 @@
                                         <td>
                                             <center>
                                             <a href="edit_karyawan.php?id=<?php echo $a['id']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
-                                            <a href="proses.php?ID=<?php echo $x['id_history']; ?>&aksi=hapushistory" onclick="return confirm('Yakin ingin menghapus <?php echo $x['nama_barang'] ?>?')"><button class="btn btn-danger"><i class="fa fa-gavel"></i>   Hapus</button></a>
+                                            <button onclick="hapus('<?php echo $a['id'] ?>','<?php echo $a['nama'] ?>')" data-toggle="tooltip" class="btn btn-danger"><i class="fa fa-gavel"></i>   Hapus</button>
+                                            <script>
+                                              function hapus(x,y){
+                                                swal({
+                                                  title: 'Apakah Anda Yakin Ingin Menghapus? '+y,
+                                                  type: 'warning',
+                                                  showCancelButton: true,
+                                                  confirmButtonColor: '#3085d6',
+                                                  cancelButtonColor: '#d33',
+                                                  confirmButtonText: 'Ya',
+                                                  cancelButtonText: 'Tidak',
+                                                }).then((result) => {
+                                                  if (result.value) {
+                                                    window.location="proses.php?id="+x+"&aksi=hapus_karyawan"; // if you need redirect page
+                                                    // swal({
+                                                    //   // position: 'top-end',
+                                                    //   type: 'success',
+                                                    //   title: 'Data Berhasil Dihapus',
+                                                    //   showConfirmButton: false,
+                                                    //   timer: 500,
+                                                    //   // html: 'logout.php'; // if you need redirect page
+                                                    // });
+                                                  }
+                                                })
+                                              }
+                                            </script>
+
                                             </center>
                                         </td>
                                         </tr>
