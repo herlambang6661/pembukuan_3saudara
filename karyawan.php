@@ -64,33 +64,32 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example"><br><br>
                                     <thead>
                                         <tr>
-                                            <th><center>Tanggal</center></th>
-                                            <th><center>Nama Barang</center></th>
-                                            <th><center>Satuan</center></th>
-                                            <th><center>Alur Transaksi</center></th>
-                                            <th><center>No. DO</center></th>
-                                            <th><center>Jumlah</center></th>
-                                            <th><center>Keterangan</center></th>
-                                            <th><center>Edit / Hapus</center></th>
+                                            <th><center>No</center></th>
+                                            <th><center>Nama Karyawan</center></th>
+                                            <th><center>Bagian</center></th>
+                                            <th><center>Aksi</center></th>
                                         </tr>
                                     </thead>
+                                    <?php
+
+                                        $query = "SELECT * FROM tb_karyawan";
+                                        $sql = mysqli_query($con, $query);
+                                        while ($a = mysqli_fetch_array($sql)) {
+
+                                    ?>
                                     <tbody>
                                         <tr class="event gradeX">
-                                        <td><center><?php echo "a"; ?><center></td>
-                                        <td><center><?php echo "a"; ?><center></td>
-                                        <td><center><?php echo "a"; ?><center></td>
-                                        <td><center><?php echo "a"; ?><center></td>
-                                        <td><center><?php echo "a"; ?><center></td>
-                                        <td><center><?php echo "a"; ?><center></td>
-                                        <td><center><?php echo "a"; ?><center></td>
+                                        <td><center><?php echo $a['id']; ?><center></td>
+                                        <td><center><?php echo $a['nama']; ?><center></td>
+                                        <td><center><?php echo $a['bagian']; ?><center></td>
                                         <td>
                                             <center>
-                                            <a href="histori-edit.php?ID=<?php echo $x['id_history']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
+                                            <a href="edit_karyawan.php?id=<?php echo $a['id']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
                                             <a href="proses.php?ID=<?php echo $x['id_history']; ?>&aksi=hapushistory" onclick="return confirm('Yakin ingin menghapus <?php echo $x['nama_barang'] ?>?')"><button class="btn btn-danger"><i class="fa fa-gavel"></i>   Hapus</button></a>
                                             </center>
                                         </td>
                                         </tr>
-                                    </tbody>
+                                    </tbody> <?php } ?>
                                 </table>
                                 </div>
                             </div>

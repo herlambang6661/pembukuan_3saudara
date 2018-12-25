@@ -11,9 +11,9 @@
 		$sql = "INSERT INTO tb_karyawan VALUES ('','$nama','$bag')";
 		$result = mysqli_query($con, $sql);
 		if ($result) {
-			header("location: karyawan.php")
+			header("location: karyawan.php");
 		} else {
-			
+
 		}
 	}
 
@@ -25,9 +25,9 @@
 		$sql = "UPDATE tb_karyawan SET nama='$nama', bagian='$bag' WHERE id='$id'";
 		$result = mysqli_query($con,$sql);
 		if ($result) {
-			echo "berhasil edit data";
+			header("location: karyawan.php");
 		} else {
-			echo "gagal edit data";
+			
 		}
 	}
 
