@@ -61,7 +61,7 @@
                                         $data = mysqli_query($con,$query);
                                         while ($a = mysqli_fetch_array($data)) {
                                        ?>
-                                        <form action="proses.php?aksi=edit_karyawan" method="POST">
+                                        <form action="proses.php?aksi=edit_karyawan&id=<?php echo $id ?>" method="POST">
                                             <div class="form-group">
                                                 <label for="inputText3" class="col-form-label">Nama karyawan</label>
                                                 <input type="text" class="form-control" name="nama" value="<?php echo $a['nama'] ?>">
@@ -77,6 +77,7 @@
                                             <div class="form-group">
                                               <button class="btn btn-primary" type="submit">Simpan</button>
                                               <button class="btn btn-danger" type="reset">Reset</button>
+                                              <button class="btn btn-info" onClick=”history.go(-1);”>Kembali</button>
                                             </div>
                                         </form><?php } ?>
                                     </div>

@@ -84,7 +84,7 @@
                                         <td><center><?php echo $a['bagian']; ?><center></td>
                                         <td>
                                             <center>
-                                            <a href="edit_karyawan.php?id=<?php echo $a['id']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
+                                            <a href="karyawan_edit.php?id=<?php echo $a['id']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
                                             <a href="proses.php?ID=<?php echo $x['id_history']; ?>&aksi=hapushistory" onclick="return confirm('Yakin ingin menghapus <?php echo $x['nama_barang'] ?>?')"><button class="btn btn-danger"><i class="fa fa-gavel"></i>   Hapus</button></a>
                                             </center>
                                         </td>
