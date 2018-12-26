@@ -37,12 +37,23 @@
         <div class="card ">
             <div class="card-header text-center"><a href="#"><img class="logo-img" src="assets/images/logo.png" alt="logo"></a><span class="splash-description">Silahkan Masukkan Username dan Password.</span></div>
             <div class="card-body">
+                
+            <?php 
+            error_reporting(0);
+            $hasil = $_GET['hasil'];
+            if ($hasil='gagal') {?>
+                <div class="alert alert-danger" role="alert">
+                <center><b>LOGIN GAGAL!</center></b><br>
+                    Username atau Password Anda tidak benar.
+                </div>
+            <?php } ?>
+
                 <form method="POST">
                     <div class="form-group">
-                        <input class="form-control form-control-lg" name="username" type="text" placeholder="Username" autocomplete="off">
+                        <input class="form-control form-control-lg" name="username" type="text" placeholder="Username" autocomplete="off" required>
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" name="password" type="password" placeholder="Password">
+                        <input class="form-control form-control-lg" name="password" type="password" placeholder="Password" required>
                     </div>
                     <div class="form-group">
                         <label class="custom-control custom-checkbox">
@@ -70,26 +81,20 @@
         $username = $_POST['username'];
         $pass     = $_POST['password'];
 
-        if (empty($username)){
-            echo "username tidak boleh kosong";
-        }
-        if (empty($passwword)){
-            echo "password tidak boleh kosong";
-        }
             $login = mysqli_query($con, "SELECT * FROM tb_admin WHERE username = '$username' AND password='$pass'");
             $row=mysqli_fetch_array($login);
             if ($row['username'] == $username AND $row['password'] == $pass){
-            session_start();
-            $_SESSION['username'] = $row['username'];
-            $_SESSION['status'] = "login";
-            header("location: index.php");
-            echo "login berhasil";
+                session_start();
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['status'] = "login";
+                header("location: index.php");
+                echo "login berhasil";
             }
             else{
-            echo "<center><br><br><br><br><br><br><b>LOGIN GAGAL! </b><br>
-                    Username atau Password Anda tidak benar.<br>";
-            echo "<br>";
-            echo "<input class='btn btn-blue' type=button value='ULANGI LAGI' onclick=location.href='login.php'></a></center>";
+            // echo "<center><br><br><br><br><br><br><b>LOGIN GAGAL! </b><br>
+            //         Username atau Password Anda tidak benar.<br>";
+            // echo "<br>";
+            // echo "<input class='btn btn-blue' type=button value='ULANGI LAGI' onclick=location.href='login.php'></a></center>";
             }
 
     }
