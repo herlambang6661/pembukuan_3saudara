@@ -34,3 +34,10 @@
           $('#dataTables-example').dataTable();
       });
     </script>
+
+    <script>
+        $('.datepicker').datepicker({
+            format: 'mm/dd/yyyy',
+            startDate: '-3d'
+        });
+    </script>

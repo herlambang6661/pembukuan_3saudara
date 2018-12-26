@@ -13,8 +13,43 @@
     <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-
-
+    <!-- DATE PICKER -->
+    <script src="assets/datePicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <link href="assets/datePicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
     <!-- SWEET ALERT -->
     <link rel="stylesheet" href="assets/sweetalert2/dist/sweetalert2.min.css">
     <script src="assets/sweetalert2/dist/sweetalert2.min.js"></script>
+
+    <?php
+        date_default_timezone_set('Asia/Jakarta');
+        $dayList = array(
+            'Sun' => 'Minggu',
+            'Mon' => 'Senin',
+            'Tue' => 'Selasa',
+            'Wed' => 'Rabu',
+            'Thu' => 'Kamis',
+            'Fri' => 'Jumat',
+            'Sat' => 'Sabtu'
+        );
+
+        function tanggal_indo($tanggal)
+        {
+            
+            $bulan = array (1 =>   
+            'Januari',
+            'Februari',
+            'Maret',
+            'April',
+            'Mei',
+            'Juni',
+            'Juli',
+            'Agustus',
+            'September',
+            'Oktober',
+            'November',
+            'Desember'
+            );
+        $split = explode('-', $tanggal);
+        return $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];    
+        }
+    ?>
