@@ -42,7 +42,7 @@
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
                                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Menu Penggajian</a></li>
-                                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Data Gaji</a></li>
+                                                <li class="breadcrumb-item"><a href="gaji.php" class="breadcrumb-link">Data Gaji</a></li>
                                                 <li class="breadcrumb-item active" aria-current="page">Input Data Gaji</li>
                                             </ol>
                                         </nav>
@@ -58,11 +58,12 @@
                                         <form action="proses.php?aksi=tambah_gaji" method="POST">
                                             <div class="form-group">
                                                 <label>Tanggal</label>
-                                                <input id="datepicker" class="datepicker">
+                                                <input type="date" name="tgl" class="form-control" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputText3" class="col-form-label">Nama karyawan</label>
-                                                <select name="karyawan" class="form-control">
+                                                <select name="karyawan" class="form-control" required>
+                                                    <option value="">-- Pilih Karyawan --</option>
                                                     <?php                                 
                                                         $query = "SELECT * FROM tb_karyawan";
                                                         $data = mysqli_query($con,$query);
@@ -75,13 +76,14 @@
                                             <div class="form-group">
                                                 <label>Ukuran Total <small>( Gunakan Koma jika diperlukan )</small></label>
                                                 <div class="input-group mb-3">
-                                                    <input type="number" name="ukuran" class="form-control">
+                                                    <input type="text" name="ukuran" class="form-control" placeholder="Masukkan total ukuran dengan angka" required>
                                                     <div class="input-group-append"><span class="input-group-text">Meter</span></div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="input-select">Harga</label>
-                                                <select name="karyawan" class="form-control">
+                                                <select name="harga" class="form-control" required>
+                                                    <option value="">-- Tentukan Harga --</option>
                                                     <?php                                 
                                                         $query = "SELECT * FROM tb_ketebalan";
                                                         $data = mysqli_query($con,$query);
@@ -92,8 +94,13 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
+                                                <label>Bonus <small>(Opsional)</small></label>
+                                                <input type="number" name="bonus" class="form-control" value="0">
+                                            </div>
+                                            <div class="form-group"><br>
                                               <button class="btn btn-primary" type="submit">Simpan</button>
                                               <button class="btn btn-danger" type="reset">Reset</button>
+                                              <input TYPE="button" class="btn btn-info" VALUE="Back" onClick="history.go(-1);">
                                             </div>
                                         </form>
                                     </div>

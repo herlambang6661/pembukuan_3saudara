@@ -73,7 +73,7 @@
                                             <div class="form-group">
                                               <button class="btn btn-primary" type="submit">Simpan</button>
                                               <button class="btn btn-danger" type="reset">Reset</button>
-                                              <button class="btn btn-info" onClick=”history.go(-1);”>Kembali</button>
+                                              <input TYPE="button" class="btn btn-info" VALUE="Back" onClick="history.go(-1);">
                                             </div>
                                         </form><?php } ?>
                                     </div>

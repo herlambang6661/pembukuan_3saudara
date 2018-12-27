@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Des 2018 pada 03.28
--- Versi server: 10.1.30-MariaDB
--- Versi PHP: 7.2.2
+-- Generation Time: 27 Des 2018 pada 06.43
+-- Versi Server: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -33,6 +31,13 @@ CREATE TABLE `tb_admin` (
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_admin`
+--
+
+INSERT INTO `tb_admin` (`username`, `password`) VALUES
+('admin', 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +56,28 @@ CREATE TABLE `tb_data_produksi` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_gaji`
+--
+
+CREATE TABLE `tb_gaji` (
+  `id` int(11) NOT NULL,
+  `tgl` date NOT NULL,
+  `karyawan` varchar(50) NOT NULL,
+  `bonus` int(11) NOT NULL,
+  `tot_ukuran` varchar(10) NOT NULL,
+  `harga` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_gaji`
+--
+
+INSERT INTO `tb_gaji` (`id`, `tgl`, `karyawan`, `bonus`, `tot_ukuran`, `harga`) VALUES
+(1, '2018-12-26', 'Maman', 0, '9,4', 7000);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_karyawan`
 --
 
@@ -65,7 +92,6 @@ CREATE TABLE `tb_karyawan` (
 --
 
 INSERT INTO `tb_karyawan` (`id`, `nama`, `bagian`) VALUES
-(1, 'Maman', 'Produksi'),
 (2, 'Koko', 'Produksi'),
 (3, 'Dadan', 'Produksi'),
 (4, 'Irfan', 'Produksi'),
@@ -117,65 +143,72 @@ INSERT INTO `tb_ukuran` (`id`, `ukuran`) VALUES
 (6, '15x30'),
 (7, '10x40'),
 (8, '10x30'),
-(9, '10x20');
+(9, '10x20'),
+(10, '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tb_data_produksi`
+-- Indexes for table `tb_data_produksi`
 --
 ALTER TABLE `tb_data_produksi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_karyawan`
+-- Indexes for table `tb_gaji`
+--
+ALTER TABLE `tb_gaji`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_karyawan`
 --
 ALTER TABLE `tb_karyawan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_ketebalan`
+-- Indexes for table `tb_ketebalan`
 --
 ALTER TABLE `tb_ketebalan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_ukuran`
+-- Indexes for table `tb_ukuran`
 --
 ALTER TABLE `tb_ukuran`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_data_produksi`
+-- AUTO_INCREMENT for table `tb_data_produksi`
 --
 ALTER TABLE `tb_data_produksi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT untuk tabel `tb_karyawan`
+-- AUTO_INCREMENT for table `tb_gaji`
+--
+ALTER TABLE `tb_gaji`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tb_karyawan`
 --
 ALTER TABLE `tb_karyawan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT untuk tabel `tb_ketebalan`
+-- AUTO_INCREMENT for table `tb_ketebalan`
 --
 ALTER TABLE `tb_ketebalan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
--- AUTO_INCREMENT untuk tabel `tb_ukuran`
+-- AUTO_INCREMENT for table `tb_ukuran`
 --
 ALTER TABLE `tb_ukuran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

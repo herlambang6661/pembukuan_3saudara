@@ -4,6 +4,20 @@
 
 	$aksi = $_GET['aksi'];
 
+	// GAJI
+	if ($aksi == "tambah_gaji") {
+		$tgl = $_POST['tgl'];
+		$karyawan = $_POST['karyawan'];
+		$ukuran = $_POST['ukuran'];
+		$harga = $_POST['harga'];
+		$bonus = $_POST['bonus'];
+
+		$sql = "INSERT INTO tb_gaji VALUES ('', '$tgl', '$karyawan', '$bonus', '$ukuran', '$harga')";
+		$result = mysqli_query($con, $sql);
+		if ($result) {
+			header("location: gaji.php");
+		}
+	}
 	// KARYAWAN
 	if ($aksi ==  "tambah_karyawan") {
 		$nama = $_POST['nama'];
