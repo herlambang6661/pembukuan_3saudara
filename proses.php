@@ -18,6 +18,32 @@
 			header("location: gaji.php");
 		}
 	}
+	if ($aksi == "edit_gaji") {
+		$id = $_GET['id'];
+		$tgl = $_POST['tgl'];
+		$karyawan = $_POST['karyawan'];
+		$ukuran = $_POST['ukuran'];
+		$harga = $_POST['harga'];
+		$bonus = $_POST['bonus'];
+
+		$sql = "UPDATE tb_gaji SET karyawan='$karyawan', tgl='$tgl', tot_ukuran='$ukuran', harga='$harga', bonus='$bonus' WHERE id='$id'";
+		$result = mysqli_query($con,$sql);
+		if ($result) {
+			header("location: gaji.php");
+		} else {
+
+		}
+	}
+
+	if ($aksi == "hapus_gaji") {
+		$id = $_GET['id'];
+
+		$result = mysqli_query($con,"DELETE FROM tb_gaji WHERE id='$id'");
+		if ($result) {
+			header("location: gaji.php");
+		} else {
+		}
+	}
 	// KARYAWAN
 	if ($aksi ==  "tambah_karyawan") {
 		$nama = $_POST['nama'];
