@@ -111,7 +111,7 @@
                                             <a class="nav-link" href="gaji.php">Lihat Data Gaji</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Laporan Mingguan</a>
+                                            <a class="nav-link" href="laporan_mingguan.php">Laporan Mingguan</a>
                                         </li>
                                     </ul>
                                 </div>
