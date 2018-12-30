@@ -1,5 +1,8 @@
 
-    <?php include 'include/db_config.php' ?>
+    <?php 
+        session_start();
+        include 'include/db_config.php';
+     ?>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,6 +22,8 @@
     <!-- SWEET ALERT -->
     <link rel="stylesheet" href="assets/sweetalert2/dist/sweetalert2.min.css">
     <script src="assets/sweetalert2/dist/sweetalert2.min.js"></script>
+    <!-- DATA TABLES -->
+    <link rel="stylesheet" href="assets/dataTables/dataTables.bootstrap4.min.css">
 
     <?php
         date_default_timezone_set('Asia/Jakarta');

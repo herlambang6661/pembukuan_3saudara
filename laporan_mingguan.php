@@ -4,12 +4,8 @@
 <head>
     <?php
 
-		// session_start();
-		// if ($_SESSION['status'] != "login") {
-		// 	header("location: ./login.php");
-        // }
+include 'lib_header.php';
 
-        include 'lib_header.php';
     ?>
     <title>Hal - Laporan Mingguan</title>
 </head>
@@ -60,29 +56,37 @@
                             <h5 class="card-header">Tabel Laporan Mingguan</h5>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example"><br><br>
+                                <table class="table table-striped table-bordered table-hover" id="tabel1"><br><br>
                                     <thead>
                                         <tr>
-                                            <th><center>No</center></th>
-                                            <th><center>Nama Karyawan</center></th>
-                                            <th><center>Bagian</center></th>
-                                            <th><center>Aksi</center></th>
+                                            <th>No</th>
+                                            <th>Tanggal</th>
+                                            <th>Nama Karyawan</th>
+                                            <th>Total Ukuran</th>
+                                            <th>Harga</th>
+                                            <th>Bonus</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                    
                                     <?php
 
-                                        $query = "SELECT * FROM tb_karyawan";
+                                        $query = "SELECT * FROM tb_gaji";
                                         $sql = mysqli_query($con, $query);
                                         while ($a = mysqli_fetch_array($sql)) {
+                                            $tgl = tanggal_indo($a['tgl']); 
+                                            $hari = date('D', strtotime($a['tgl']));
 
                                     ?>
-                                    <tbody>
                                         <tr class="event gradeX">
-                                        <td><center><?php echo $a['id']; ?><center></td>
-                                        <td><center><?php echo $a['nama']; ?><center></td>
-                                        <td><center><?php echo $a['bagian']; ?><center></td>
+                                        <td><?php echo $i=1;$i++; ?></td>
+                                        <td><?php echo $dayList[$hari].", ".$tgl; ?></td>
+                                        <td><?php echo $a['karyawan']; ?></td>
+                                        <td><?php echo $a['tot_ukuran']; ?> Meter</td>
+                                        <td><?php echo $a['harga']; ?></td>
+                                        <td><?php echo $a['bonus']; ?></td>
                                         <td>
-                                            <center>
                                             <a href="karyawan_edit.php?id=<?php echo $a['id']; ?>"><button class="btn btn-outline-brand" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit Data"><i class="fa fa-edit"></i></button></a>
                                             <button onclick="hapus('<?php echo $a['id'] ?>','<?php echo $a['nama'] ?>')" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus Data"><i class="fa fa-trash"></i></button>
                                             <script>
@@ -110,11 +114,10 @@
                                                 })
                                               }
                                             </script>
-
-                                            </center>
                                         </td>
                                         </tr>
-                                    </tbody> <?php } ?>
+                                        <?php } ?>
+                                    </tbody>
                                 </table>
                                 </div>
                             </div>

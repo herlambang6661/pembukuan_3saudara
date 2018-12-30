@@ -60,14 +60,16 @@
                             <div class="card-body">
                                 <a href="ukuran_tambah.php" class="btn btn-info"><i class="fa fa-plus"></i> Tambah ukuran</a>
                                 <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example"><br><br>
+                                <table class="table table-striped table-bordered table-hover" id="tabel1"><br><br>
                                     <thead>
                                         <tr>
-                                            <th><center>No</center></th>
-                                            <th><center>Ukuran</center></th>
-                                            <th><center>Aksi</center></th>
+                                            <th>No</th>
+                                            <th>Ukuran</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                    
                                     <?php
 
                                         $query = "SELECT * FROM tb_ukuran";
@@ -75,44 +77,41 @@
                                         while ($a = mysqli_fetch_array($sql)) {
 
                                     ?>
-                                    <tbody>
                                         <tr class="event gradeX">
-                                        <td><center><?php echo $a['id']; ?><center></td>
-                                        <td><center><?php echo $a['ukuran']; ?><center></td>
-                                        <td>
-                                            <center>
-                                            <a href="ukuran_edit.php?id=<?php echo $a['id']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
-                                            <button onclick="hapus('<?php echo $a['id'] ?>','<?php echo $a['ukuran'] ?>')" data-toggle="tooltip" class="btn btn-danger"><i class="fa fa-gavel"></i>   Hapus</button>
-                                            <script>
-                                              function hapus(x,y){
-                                                swal({
-                                                  title: 'Apakah Anda Yakin Ingin Menghapus? '+y,
-                                                  type: 'warning',
-                                                  showCancelButton: true,
-                                                  confirmButtonColor: '#3085d6',
-                                                  cancelButtonColor: '#d33',
-                                                  confirmButtonText: 'Ya',
-                                                  cancelButtonText: 'Tidak',
-                                                }).then((result) => {
-                                                  if (result.value) {
-                                                    window.location="proses.php?id="+x+"&aksi=hapus_ukuran"; // if you need redirect page
-                                                    // swal({
-                                                    //   // position: 'top-end',
-                                                    //   type: 'success',
-                                                    //   title: 'Data Berhasil Dihapus',
-                                                    //   showConfirmButton: false,
-                                                    //   timer: 500,
-                                                    //   // html: 'logout.php'; // if you need redirect page
-                                                    // });
-                                                  }
-                                                })
-                                              }
-                                            </script>
-
-                                            </center>
-                                        </td>
+                                            <td><?php echo $a['id']; ?></td>
+                                            <td><?php echo $a['ukuran']; ?></td>
+                                            <td>
+                                                <a href="ukuran_edit.php?id=<?php echo $a['id']; ?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button></a>
+                                                <button onclick="hapus('<?php echo $a['id'] ?>','<?php echo $a['ukuran'] ?>')" data-toggle="tooltip" class="btn btn-danger"><i class="fa fa-gavel"></i>   Hapus</button>
+                                                <script>
+                                                    function hapus(x,y){
+                                                        swal({
+                                                        title: 'Apakah Anda Yakin Ingin Menghapus? '+y,
+                                                        type: 'warning',
+                                                        showCancelButton: true,
+                                                        confirmButtonColor: '#3085d6',
+                                                        cancelButtonColor: '#d33',
+                                                        confirmButtonText: 'Ya',
+                                                        cancelButtonText: 'Tidak',
+                                                        }).then((result) => {
+                                                        if (result.value) {
+                                                            window.location="proses.php?id="+x+"&aksi=hapus_ukuran"; // if you need redirect page
+                                                            // swal({
+                                                            //   // position: 'top-end',
+                                                            //   type: 'success',
+                                                            //   title: 'Data Berhasil Dihapus',
+                                                            //   showConfirmButton: false,
+                                                            //   timer: 500,
+                                                            //   // html: 'logout.php'; // if you need redirect page
+                                                            // });
+                                                        }
+                                                        })
+                                                    }
+                                                </script>
+                                            </td>
                                         </tr>
-                                    </tbody> <?php } ?>
+                                        <?php } ?>
+                                    </tbody>
                                 </table>
                                 </div>
                             </div>
