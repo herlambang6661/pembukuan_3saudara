@@ -53,7 +53,21 @@ include 'lib_header.php';
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Tabel Laporan Mingguan</h5>
+                            <h5 class="card-header">Laporan Mingguan</h5>
+                            <div class="card-body">
+                                <form action="laporan_mingguan_lihat.php" method="POST">
+                                    <div class="form-group">
+                                        <label for="tgl">Pilih Tanggal</label>
+                                        <input type="date" name="tgl" class="form-control">
+                                    </div>
+                                    <div class="form-group">                                
+                                        <input type="submit" class="btn btn-primary btn-block">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h5 class="card-header">Tabel Semua Laporan</h5>
                             <div class="card-body">
                                 <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="tabel1"><br><br>

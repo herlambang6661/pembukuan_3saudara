@@ -108,6 +108,9 @@
                                             <a class="nav-link" href="gaji_tambah.php">Input Data Gaji</a>
                                         </li>
                                         <li class="nav-item">
+                                            <a class="nav-link" href="gaji_karyawan_tambah.php">Input berdasarkan Karyawan</a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link" href="gaji.php">Lihat Data Gaji</a>
                                         </li>
                                         <li class="nav-item">
