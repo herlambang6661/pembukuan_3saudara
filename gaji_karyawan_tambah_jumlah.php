@@ -12,6 +12,8 @@
         include 'lib_header.php';
 
         $id = $_POST['karyawan'];
+        $dari = $_POST['dari'];
+        $sampai = $_POST['sampai'];
         $query = "SELECT * FROM tb_karyawan WHERE id='$id'";
         $data = mysqli_query($con,$query);
         while ($a = mysqli_fetch_array($data)) {
@@ -76,7 +78,7 @@
                                             <table class="table table-striped table-bordered table-hover">
                                             <tr>
                                             <td>No.</td>
-                                            <td>Hari</td>
+                                            <!-- <td>Hari</td> -->
                                             <td>Tanggal</td>
                                             <td>Nama Karyawan</td>
                                             <td>Ukuran Total</td>
@@ -85,28 +87,24 @@
 
                                             <?php
                                             $no = 1;
-                                            $n = 7; // membaca jumlah data
+                                            $n = $_POST['jml']; // membaca jumlah data
 
-                                            $hari = array(
-                                                '1' => 'Sabtu', 
-                                                '2' => 'Minggu', 
-                                                '3' => 'Senin', 
-                                                '4' => 'Selasa', 
-                                                '5' => 'Rabu', 
-                                                '6' => 'Kamis', 
-                                                '7' => 'Jumat',                                                 
-                                            );
+                                            // $hari = array(
+                                            //     '1' => 'Sabtu', 
+                                            //     '2' => 'Minggu', 
+                                            //     '3' => 'Senin', 
+                                            //     '4' => 'Selasa', 
+                                            //     '5' => 'Rabu', 
+                                            //     '6' => 'Kamis', 
+                                            //     '7' => 'Jumat',                                                 
+                                            // );
 
                                             for ($i=1; $i<=$n; $i++)
                                             {
-                                            $h = $hari[$i];
+                                            // $h = $hari[$i];
                                             echo "
                                                     <tr>
                                                     <td>$no</td>
-                                                    <td>
-                                                        <input type='text' class='form-control' value='$h' readonly>
-                                                        <input type='hidden' name='hari".$i."' class='form-control' value='$h'>
-                                                    </td>
 
                                                     <td>
                                                         <input type='date' name='tgl".$i."' class='form-control'>
@@ -134,7 +132,7 @@
                                                         </select>
                                                     </td>
                                                 </tr>";
-                                                $no++;$h++;
+                                                $no++;
                                             }
                                             ?>
 

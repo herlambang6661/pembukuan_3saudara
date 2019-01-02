@@ -52,6 +52,43 @@
                         </div>
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <!-- <div class="card">
+                                    <h5 class="card-header">Input Gaji Berdasarkan Karyawan</h5>
+                                    <div class="card-body">
+                                        <form action="gaji_karyawan_tambah_jumlah.php" method="POST">
+                                            <div class="form-group">
+                                                <label for="inputText3" class="col-form-label">Nama karyawan</label>
+                                                <select name="karyawan" class="form-control" required>
+                                                    <option value="">-- Pilih Karyawan --</option>
+                                                    <?php                                 
+                                                        // $query = "SELECT * FROM tb_karyawan";
+                                                        // $data = mysqli_query($con,$query);
+                                                        // while ($a = mysqli_fetch_array($data)) {
+                                                    ?>
+                                                        <option value="<?php //echo $a['id']; ?>"><?php //echo $a['nama']; ?></option>
+                                                        <?php //} ?>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Dari Tanggal</label>
+                                                    <input type="date" name="dari" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Sampai Tanggal</label>
+                                                    <input type="date" name="sampai" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group"><br>
+                                              <button class="btn btn-primary" type="submit">Lanjut</button>
+                                              <button class="btn btn-danger" type="reset">Reset</button>
+                                              <input TYPE="button" class="btn btn-info" VALUE="Back" onClick="history.go(-1);">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> -->
                                 <div class="card">
                                     <h5 class="card-header">Input Gaji Berdasarkan Karyawan</h5>
                                     <div class="card-body">
@@ -68,6 +105,10 @@
                                                         <option value="<?php echo $a['id']; ?>"><?php echo $a['nama']; ?></option>
                                                         <?php } ?>
                                                 </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Jumlah Inputan Hari</label>
+                                                <input type="number" name="jml" class="form-control" placeholder="Masukkan jumlah hari karyawan kerja dengan angka">
                                             </div>
                                             <div class="form-group"><br>
                                               <button class="btn btn-primary" type="submit">Lanjut</button>
