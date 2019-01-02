@@ -29,7 +29,7 @@
           $('#tabel1').dataTable();
       });
     </script>
-    
+
     <script>
       $(document).ready(function () {
           $('#tabel2').dataTable();
@@ -41,4 +41,15 @@
             format: 'mm/dd/yyyy',
             startDate: '-3d'
         });
+    </script>
+
+    <script type="text/javascript">
+      function printContent(el)
+      {
+        var restorepage = document.body.innerHTML;
+        var printcontent = document.getElementById(el).innerHTML;
+        document.body.innerHTML = printcontent;
+        window.print();
+        document.body.innerHTML = restorepage;
+      }
     </script>
