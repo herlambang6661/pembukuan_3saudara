@@ -55,7 +55,7 @@
                                 <div class="card">
                                     <h5 class="card-header">Input Gaji Berdasarkan Karyawan</h5>
                                     <div class="card-body">
-                                        <form action="proses.php?aksi=tambah_gaji_karyawan" method="POST">
+                                        <form action="gaji_karyawan_tambah_jumlah.php" method="POST">
                                             <div class="form-group">
                                                 <label for="inputText3" class="col-form-label">Nama karyawan</label>
                                                 <select name="karyawan" class="form-control" required>
@@ -65,12 +65,12 @@
                                                         $data = mysqli_query($con,$query);
                                                         while ($a = mysqli_fetch_array($data)) {
                                                     ?>
-                                                    <option value="<?php echo $a['id']; ?>"><?php echo $a['nama']; ?></option>
+                                                        <option value="<?php echo $a['id']; ?>"><?php echo $a['nama']; ?></option>
                                                         <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="form-group"><br>
-                                              <button class="btn btn-primary" type="submit">Simpan</button>
+                                              <button class="btn btn-primary" type="submit">Lanjut</button>
                                               <button class="btn btn-danger" type="reset">Reset</button>
                                               <input TYPE="button" class="btn btn-info" VALUE="Back" onClick="history.go(-1);">
                                             </div>

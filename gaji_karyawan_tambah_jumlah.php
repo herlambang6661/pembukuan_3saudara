@@ -10,6 +10,13 @@
         // }
 
         include 'lib_header.php';
+
+        $id = $_POST['karyawan'];
+        $query = "SELECT * FROM tb_karyawan WHERE id='$id'";
+        $data = mysqli_query($con,$query);
+        while ($a = mysqli_fetch_array($data)) {
+            $karyawan = $a['nama'];
+        }
     ?>
     <title>Hal - Tambah Gaji Berdasarkan Karyawan</title>
 </head>
@@ -55,29 +62,85 @@
                                 <div class="card">
                                     <h5 class="card-header">Input Gaji Berdasarkan Karyawan</h5>
                                     <div class="card-body">
-                                        <form action="proses.php?aksi=tambah_gaji" method="POST">
-                                            <div class="form-group">
-                                                <label>Input Sampai Tanggal</label>
-                                                <input type="date" name="tgl" class="form-control" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputText3" class="col-form-label">Nama karyawan</label>
-                                                <select name="karyawan" class="form-control" required>
-                                                    <option value="">-- Pilih Karyawan --</option>
-                                                    <?php                                 
-                                                        $query = "SELECT * FROM tb_karyawan";
+                                        <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <tr>
+                                                <td>Nama Karyawan</td>
+                                                <td>:</td>
+                                                <td><?php echo $karyawan ?></td>
+                                            </tr>
+                                        </table><br>
+
+                                        </div>
+                                        <form method="post" action="proses.php?aksi=tambah_gaji_karyawan">
+                                            <table class="table table-striped table-bordered table-hover">
+                                            <tr>
+                                            <td>No.</td>
+                                            <td>Hari</td>
+                                            <td>Tanggal</td>
+                                            <td>Nama Karyawan</td>
+                                            <td>Ukuran Total</td>
+                                            <td>Harga</td>
+                                            </tr>
+
+                                            <?php
+                                            $no = 1;
+                                            $n = 7; // membaca jumlah data
+
+                                            $hari = array(
+                                                '1' => 'Sabtu', 
+                                                '2' => 'Minggu', 
+                                                '3' => 'Senin', 
+                                                '4' => 'Selasa', 
+                                                '5' => 'Rabu', 
+                                                '6' => 'Kamis', 
+                                                '7' => 'Jumat',                                                 
+                                            );
+
+                                            for ($i=1; $i<=$n; $i++)
+                                            {
+                                            $h = $hari[$i];
+                                            echo "
+                                                    <tr>
+                                                    <td>$no</td>
+                                                    <td>
+                                                        <input type='text' class='form-control' value='$h' readonly>
+                                                        <input type='hidden' name='hari".$i."' class='form-control' value='$h'>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type='date' name='tgl".$i."' class='form-control'>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type='hidden' name='nama".$i."' class='form-control' value='$karyawan'>
+                                                        <input type='text' class='form-control' value='$karyawan' readonly>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type='number' name='ukuran".$i."' class='form-control' value='0'>
+                                                    </td>
+
+                                                    <td>
+                                                        <select name='harga".$i."' class='form-control'>";
+                                                        $query = "SELECT * FROM tb_ketebalan";
                                                         $data = mysqli_query($con,$query);
                                                         while ($a = mysqli_fetch_array($data)) {
-                                                    ?>
-                                                    <option value="<?php echo $a['nama']; ?>"><?php echo $a['nama']; ?></option>
-                                                        <?php } ?>
-                                                </select>
-                                            </div>
-                                            <div class="form-group"><br>
-                                              <button class="btn btn-primary" type="submit">Simpan</button>
-                                              <button class="btn btn-danger" type="reset">Reset</button>
-                                              <input TYPE="button" class="btn btn-info" VALUE="Back" onClick="history.go(-1);">
-                                            </div>
+                                                        echo " 
+                                                                <option value='".$a['harga']."' >".$a['harga']."</option>
+                                                            ";
+                                                        }
+                                                        echo "
+                                                        </select>
+                                                    </td>
+                                                </tr>";
+                                                $no++;$h++;
+                                            }
+                                            ?>
+
+                                            </table><br>
+                                            <input type="submit" name="submit" value="Simpan" class="btn btn-primary btn-block">
+                                            <input type="hidden" name="jum" value="<?php echo $n; ?>">
                                         </form>
                                     </div>
                                 </div>
