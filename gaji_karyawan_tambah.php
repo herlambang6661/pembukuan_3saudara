@@ -92,7 +92,36 @@
                                 <div class="card">
                                     <h5 class="card-header">Input Gaji Berdasarkan Karyawan</h5>
                                     <div class="card-body">
-                                        <form action="gaji_karyawan_tambah_jumlah.php" method="POST">
+                                    
+                                    <?php
+                                        if (isset($_POST['lanjut']))
+                                        {
+                                            if ($_POST['jml'] > 7) {
+                                                echo "
+                                                <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                                                    Inputan tidak boleh Lebih dari 7.
+                                                    <a href='#' class='close' data-dismiss='alert' aria-label='Close'>
+                                                        <span aria-hidden='true'>×</span>
+                                                    </a>
+                                                </div>";
+                                            }
+                                            elseif ($_POST['jml'] <= 0) {
+                                                echo "
+                                                <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                                                    Inputan tidak boleh Kurang dari 0.
+                                                    <a href='#' class='close' data-dismiss='alert' aria-label='Close'>
+                                                        <span aria-hidden='true'>×</span>
+                                                    </a>
+                                                </div>";
+                                            }
+                                            else {
+                                                $kr = $_POST['karyawan'];
+                                                $jml = $_POST['jml'];
+			                                    echo "<script>window.location='gaji_karyawan_tambah_jumlah.php?kr=$kr&jml=$jml';</script>";
+                                            }
+                                        }
+                                    ?>
+                                        <form action="" method="POST">
                                             <div class="form-group">
                                                 <label for="inputText3" class="col-form-label">Nama karyawan</label>
                                                 <select name="karyawan" class="form-control" required>
@@ -108,10 +137,18 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Jumlah Inputan Hari</label>
-                                                <input type="number" name="jml" class="form-control" placeholder="Masukkan jumlah hari karyawan kerja dengan angka">
+                                                <input type="number" name="jml" class="form-control" placeholder="Masukkan jumlah hari karyawan kerja dengan angka 1 sampai 7" onkeypress="return hanyaAngka(event)">
                                             </div>
+                                            <script>
+                                            function hanyaAngka(evt){
+                                                var charCode = (evt.which) ? evt.which : event.keyCode
+                                                if (charCode > 31 && (charCode < 48 || charCode >57))
+                                                return false;
+                                                return true;
+                                            }
+                                            </script>
                                             <div class="form-group"><br>
-                                              <button class="btn btn-primary" type="submit">Lanjut</button>
+                                              <button class="btn btn-primary" type="submit" name="lanjut">Lanjut</button>
                                               <button class="btn btn-danger" type="reset">Reset</button>
                                               <input TYPE="button" class="btn btn-info" VALUE="Back" onClick="history.go(-1);">
                                             </div>

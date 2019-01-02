@@ -11,9 +11,7 @@
 
         include 'lib_header.php';
 
-        $id = $_POST['karyawan'];
-        $dari = $_POST['dari'];
-        $sampai = $_POST['sampai'];
+        $id = $_GET['kr'];
         $query = "SELECT * FROM tb_karyawan WHERE id='$id'";
         $data = mysqli_query($con,$query);
         while ($a = mysqli_fetch_array($data)) {
@@ -87,7 +85,7 @@
 
                                             <?php
                                             $no = 1;
-                                            $n = $_POST['jml']; // membaca jumlah data
+                                            $n = $_GET['jml']; // membaca jumlah data
 
                                             // $hari = array(
                                             //     '1' => 'Sabtu', 
