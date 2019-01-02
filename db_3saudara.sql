@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 27 Des 2018 pada 06.43
+-- Generation Time: 02 Jan 2019 pada 05.53
 -- Versi Server: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -73,7 +73,13 @@ CREATE TABLE `tb_gaji` (
 --
 
 INSERT INTO `tb_gaji` (`id`, `tgl`, `karyawan`, `bonus`, `tot_ukuran`, `harga`) VALUES
-(1, '2018-12-26', 'Maman', 0, '9,4', 7000);
+(1, '2018-12-26', 'Koko', 0, '9,4', 7000),
+(2, '2018-12-27', 'Dadan', 0, '12,2', 7000),
+(3, '2018-12-01', 'Irfan', 0, '9,4', 7000),
+(4, '2018-12-03', 'Irfan', 0, '12,2', 7000),
+(5, '2018-12-04', 'Irfan', 0, '7,3', 7000),
+(6, '2018-12-06', 'Irfan', 0, '13,88', 7000),
+(7, '2018-12-07', 'Irfan', 0, '6,29', 7000);
 
 -- --------------------------------------------------------
 
@@ -144,7 +150,8 @@ INSERT INTO `tb_ukuran` (`id`, `ukuran`) VALUES
 (7, '10x40'),
 (8, '10x30'),
 (9, '10x20'),
-(10, '');
+(10, '000'),
+(11, '111');
 
 --
 -- Indexes for dumped tables
@@ -193,7 +200,7 @@ ALTER TABLE `tb_data_produksi`
 -- AUTO_INCREMENT for table `tb_gaji`
 --
 ALTER TABLE `tb_gaji`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tb_karyawan`
 --
@@ -208,7 +215,7 @@ ALTER TABLE `tb_ketebalan`
 -- AUTO_INCREMENT for table `tb_ukuran`
 --
 ALTER TABLE `tb_ukuran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

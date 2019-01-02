@@ -55,11 +55,7 @@
                                 <div class="card">
                                     <h5 class="card-header">Input Gaji Berdasarkan Karyawan</h5>
                                     <div class="card-body">
-                                        <form action="proses.php?aksi=tambah_gaji" method="POST">
-                                            <div class="form-group">
-                                                <label>Input Sampai Tanggal</label>
-                                                <input type="date" name="tgl" class="form-control" required>
-                                            </div>
+                                        <form action="proses.php?aksi=tambah_gaji_karyawan" method="POST">
                                             <div class="form-group">
                                                 <label for="inputText3" class="col-form-label">Nama karyawan</label>
                                                 <select name="karyawan" class="form-control" required>
