@@ -82,6 +82,7 @@
                                             <td>Tanggal</td>
                                             <td>Nama Karyawan</td>
                                             <td>Ukuran Total</td>
+                                            <td>Ketebalan</td>
                                             <td>Harga</td>
                                             </tr>
 
@@ -90,13 +91,13 @@
                                             $n = $_POST['jml']; // membaca jumlah data
 
                                             // $hari = array(
-                                            //     '1' => 'Sabtu', 
-                                            //     '2' => 'Minggu', 
-                                            //     '3' => 'Senin', 
-                                            //     '4' => 'Selasa', 
-                                            //     '5' => 'Rabu', 
-                                            //     '6' => 'Kamis', 
-                                            //     '7' => 'Jumat',                                                 
+                                            //     '1' => 'Sabtu',
+                                            //     '2' => 'Minggu',
+                                            //     '3' => 'Senin',
+                                            //     '4' => 'Selasa',
+                                            //     '5' => 'Rabu',
+                                            //     '6' => 'Kamis',
+                                            //     '7' => 'Jumat',
                                             // );
 
                                             for ($i=1; $i<=$n; $i++)
@@ -124,12 +125,17 @@
                                                         $query = "SELECT * FROM tb_ketebalan";
                                                         $data = mysqli_query($con,$query);
                                                         while ($a = mysqli_fetch_array($data)) {
-                                                        echo " 
-                                                                <option value='".$a['harga']."' >".$a['harga']."</option>
+                                                        echo "
+                                                                <option value='".$a['ketebalan']."' >".$a['ketebalan']."</option>
                                                             ";
                                                         }
                                                         echo "
                                                         </select>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type='hidden' name='nama".$i."' class='form-control' value='$karyawan'>
+                                                        <input type='text' class='form-control' value='' readonly>
                                                     </td>
                                                 </tr>";
                                                 $no++;

@@ -44,9 +44,9 @@
 		} else {
 		}
 	}
-	
+
 	if ($aksi == "tambah_gaji_karyawan") {
-		
+
 
 		$n = 7; // membaca jumlah data
 
@@ -58,11 +58,11 @@
 		 $nama = $_POST['nama'.$i];
 		 $ukuran = $_POST['ukuran'.$i];
 		 $harga = $_POST['harga'.$i];
-	
+
 		 if ((!empty($no)) && (!empty($nama)) && (!empty($kode)) && (!empty($value)))
 		 {
 		 $query = "INSERT INTO tb_gaji (tgl, karyawan, tot_ukuran, harga) VALUES ('$tgl', '$nama', '$ukuran', '$harga')";
-		 $hasil = mysqli_query($conn, $query);	
+		 $hasil = mysqli_query($conn, $query);
 		   if($hasil){
 			header("location: karyawan.php");
 		}else{
@@ -179,6 +179,96 @@
 		$result = mysqli_query($con,"DELETE FROM tb_ketebalan WHERE id='$id'");
 		if ($result) {
 			header("location: ketebalanHarga.php");
+		} else {
+		}
+	}
+
+	// TUNJANGAN
+	if ($aksi ==  "tambah_tunjangan") {
+		$tgl = $_POST['tanggal'];
+		$karyawan = $_POST['karyawan'];
+		$thr = $_POST['thr'];
+		$uangKerajinan = $_POST['uangKerajinan'];
+
+		$sql = "INSERT INTO tb_tunjangan VALUES ('','$tgl','$karyawan','$thr','$uangKerajinan')";
+		$result = mysqli_query($con, $sql);
+		if ($result) {
+			header("location: tunjangan.php");
+		} else {
+
+		}
+	}
+
+	if ($aksi == "edit_tunjangan") {
+		$id = $_GET['id'];
+		$tgl = $_POST['tanggal'];
+		$karyawan = $_POST['karyawan'];
+		$thr = $_POST['thr'];
+		$uangKerajinan = $_POST['uangKerajinan'];
+
+		$sql = "UPDATE tb_tunjangan SET tanggal='$tgl', nama='$karyawan', thr='$thr', uang_kerajinan='$uangKerajinan' WHERE id='$id'";
+		$result = mysqli_query($con,$sql);
+		if ($result) {
+			header("location: tunjangan.php");
+		} else {
+
+		}
+	}
+
+	if ($aksi == "hapus_tunjangan") {
+		$id = $_GET['id'];
+
+		$result = mysqli_query($con,"DELETE FROM tb_tunjangan WHERE id='$id'");
+		if ($result) {
+			header("location: tunjangan.php");
+		} else {
+		}
+	}
+
+	// POTONGAN
+	if ($aksi ==  "tambah_potongan") {
+		$tgl = $_POST['tanggal'];
+		$karyawan = $_POST['karyawan'];
+		$jamsostek = $_POST['jamsostek'];
+		$telat = $_POST['telat'];
+		$absen = $_POST['absen'];
+		$pph = $_POST['pph'];
+		$kasbon = $_POST['kasbon'];
+
+		$sql = "INSERT INTO tb_potongan VALUES ('','$tgl','$karyawan','$jamsostek','$absen', '$telat', '$pph', '$kasbon')";
+		$result = mysqli_query($con, $sql);
+		if ($result) {
+			header("location: potongan.php");
+		} else {
+
+		}
+	}
+
+	if ($aksi == "edit_potongan") {
+		$id = $_GET['id'];
+		$tgl = $_POST['tanggal'];
+		$karyawan = $_POST['karyawan'];
+		$jamsostek = $_POST['jamsostek'];
+		$telat = $_POST['telat'];
+		$absen = $_POST['absen'];
+		$pph = $_POST['pph'];
+		$kasbon = $_POST['kasbon'];
+
+		$sql = "UPDATE tb_potongan SET tanggal='$tgl', nama='$karyawan', potongan_jamsostek='$jamsostek', potongan_absen='$absen', potongan_telat='$telat', pph='$pph', kasbon='$kasbon' WHERE id='$id'";
+		$result = mysqli_query($con,$sql);
+		if ($result) {
+			header("location: potongan.php");
+		} else {
+
+		}
+	}
+
+	if ($aksi == "hapus_potongan") {
+		$id = $_GET['id'];
+
+		$result = mysqli_query($con,"DELETE FROM tb_potongan WHERE id='$id'");
+		if ($result) {
+			header("location: potongan.php");
 		} else {
 		}
 	}

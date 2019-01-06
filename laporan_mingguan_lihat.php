@@ -61,6 +61,7 @@
                                 <div class="card-header d-flex">
                                     <h4 class="card-header-title "></h4>
                                     <div class="toolbar card-toolbar-tabs  ml-auto">
+                                      <input TYPE="button" class="btn btn-info" VALUE="Kembali" onClick="history.go(-1);">
                                       <button type="button" onclick="printContent('lul')" class="btn btn-success"><i class="fa fa-print"></i>   Print</button>
                                     </div>
                                 </div>
