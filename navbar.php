@@ -66,7 +66,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            
+
                             <!-- <li class="nav-divider">
                                 Pembukuan
                             </li>
@@ -98,7 +98,7 @@
                             </li> -->
 
                             <li class="nav-divider">
-                                Penggajian
+                                <i class="fa fa-dolars"></i> Penggajian
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-20" aria-controls="submenu-20"><i class="fas fa-donate"></i>Menu Penggajian</a>
@@ -108,7 +108,7 @@
                                             <a class="nav-link" href="gaji_tambah.php">Input Data Gaji</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="gaji_karyawan_tambah.php">Input berdasarkan Karyawan</a>
+                                            <a class="nav-link" href="gaji_karyawan_tambah.php">Input Berdasarkan Karyawan</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="gaji.php">Lihat Data Gaji</a>
@@ -118,6 +118,52 @@
                                         </li>
                                     </ul>
                                 </div>
+                            </li>
+                            <li class="nav-divider">
+                               Tunjangan & Potongan
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-30" aria-controls="submenu-30"><i class="fas fa-plus"></i>Menu Tunjangan</a>
+                              <div id="submenu-30" class="collapse submenu" style="">
+                                <ul class="nav flex-column">
+                                      <li class="nav-item">
+                                          <a class="nav-link" href="tunjangan_tambah.php">Input Tunjangan</a>
+                                      </li>
+                                      <li class="nav-item">
+                                          <a class="nav-link" href="tunjangan.php">Lihat Data Tunjangan</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-40" aria-controls="submenu-40"><i class="fas fa-minus"></i>Menu Potongan</a>
+                              <div id="submenu-40" class="collapse submenu" style="">
+                                <ul class="nav flex-column">
+                                      <li class="nav-item">
+                                          <a class="nav-link" href="potongan_tambah.php">Input Potongan</a>
+                                      </li>
+                                      <li class="nav-item">
+                                          <a class="nav-link" href="potongan.php">Lihat Data Potongan</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                            </li>
+
+                            <li class="nav-divider">
+                               Grafik
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-50" aria-controls="submenu-50"><i class="fas fa-minus"></i>Menu Potongan</a>
+                              <div id="submenu-50" class="collapse submenu" style="">
+                                <ul class="nav flex-column">
+                                      <li class="nav-item">
+                                          <a class="nav-link" href="potongan_tambah.php">Input Potongan</a>
+                                      </li>
+                                      <li class="nav-item">
+                                          <a class="nav-link" href="potongan.php">Lihat Data Potongan</a>
+                                      </li>
+                                  </ul>
+                              </div>
                             </li>
                         </ul>
                     </div>
