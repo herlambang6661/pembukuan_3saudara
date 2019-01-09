@@ -72,7 +72,7 @@
                                         </table><br>
 
                                         </div>
-                                        <form method="post" action="proses.php?aksi=tambah_gaji_karyawan">
+                                        <form method="POST" action="proses.php?aksi=tambah_gaji_karyawan">
                                             <table class="table table-striped table-bordered table-hover">
                                             <tr>
                                             <td>No.</td>
@@ -87,19 +87,7 @@
                                             $no = 1;
                                             $n = $_GET['jml']; // membaca jumlah data
 
-                                            // $hari = array(
-                                            //     '1' => 'Sabtu', 
-                                            //     '2' => 'Minggu', 
-                                            //     '3' => 'Senin', 
-                                            //     '4' => 'Selasa', 
-                                            //     '5' => 'Rabu', 
-                                            //     '6' => 'Kamis', 
-                                            //     '7' => 'Jumat',                                                 
-                                            // );
-
-                                            for ($i=1; $i<=$n; $i++)
-                                            {
-                                            // $h = $hari[$i];
+                                            for ($i=1; $i<=$n; $i++){
                                             echo "
                                                     <tr>
                                                     <td>$no</td>
@@ -114,20 +102,11 @@
                                                     </td>
 
                                                     <td>
-                                                        <input type='number' name='ukuran".$i."' class='form-control' value='0'>
+                                                        <input type='text' name='ukuran".$i."' class='form-control' value='0'>
                                                     </td>
 
                                                     <td>
-                                                        <select name='harga".$i."' class='form-control'>";
-                                                        $query = "SELECT * FROM tb_ketebalan";
-                                                        $data = mysqli_query($con,$query);
-                                                        while ($a = mysqli_fetch_array($data)) {
-                                                        echo " 
-                                                                <option value='".$a['harga']."' >".$a['harga']."</option>
-                                                            ";
-                                                        }
-                                                        echo "
-                                                        </select>
+                                                        <input type name='harga".$i."' class='form-control' value='7000'>
                                                     </td>
                                                 </tr>";
                                                 $no++;
@@ -136,7 +115,7 @@
 
                                             </table><br>
                                             <input type="submit" name="submit" value="Simpan" class="btn btn-primary btn-block">
-                                            <input type="hidden" name="jum" value="<?php echo $n; ?>">
+                                            <input type="hidden" name="jml" value="<?php echo $n; ?>">
                                         </form>
                                     </div>
                                 </div>

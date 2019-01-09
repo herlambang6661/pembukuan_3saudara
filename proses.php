@@ -47,27 +47,25 @@
 	
 	if ($aksi == "tambah_gaji_karyawan") {
 		
-
-		$n = 7; // membaca jumlah data
+		$n = $_POST['jml']; // membaca jumlah data
 
 		// looping
 		for ($i=1; $i<=$n; $i++)
 		{
-		//  $hari = $_POST['hari'.$i];
 		 $tgl = $_POST['tgl'.$i];
 		 $nama = $_POST['nama'.$i];
 		 $ukuran = $_POST['ukuran'.$i];
 		 $harga = $_POST['harga'.$i];
 	
-		 if ((!empty($no)) && (!empty($nama)) && (!empty($kode)) && (!empty($value)))
+		 if ((!empty($tgl)) && (!empty($nama)) && (!empty($ukuran)) && (!empty($harga)))
 		 {
 		 $query = "INSERT INTO tb_gaji (tgl, karyawan, tot_ukuran, harga) VALUES ('$tgl', '$nama', '$ukuran', '$harga')";
-		 $hasil = mysqli_query($conn, $query);	
+		 $hasil = mysqli_query($con, $query);	
 		   if($hasil){
-			header("location: karyawan.php");
-		}else{
-			header("location: karyawan.php");
-		}
+			header("location: karyawan.php?hasil=berhasil");
+			}else{
+				header("location: karyawan.php?hasil=gagal");
+			}
 		 }
 		}
 	}
