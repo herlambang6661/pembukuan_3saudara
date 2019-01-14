@@ -61,7 +61,7 @@
                                         <form action="proses.php?aksi=tambah_tunjangan" method="POST">
                                             <div class="form-group">
                                                 <label>Tanggal</label>
-                                                <input type="date" name="tgl" class="form-control" required>
+                                                <input type="date" name="tanggal" class="form-control" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputText3" class="col-form-label">Nama karyawan</label>
