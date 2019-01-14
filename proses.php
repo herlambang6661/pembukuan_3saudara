@@ -10,12 +10,13 @@
 		$karyawan = $_POST['karyawan'];
 		$ukuran = $_POST['ukuran'];
 		$harga = $_POST['harga'];
-		$bonus = $_POST['bonus'];
+		$ketebalan = $_POST['ketebalan'];
+		$jumlah = $ukuran * $harga;
 
-		$sql = "INSERT INTO tb_gaji VALUES ('', '$tgl', '$karyawan', '$bonus', '$ukuran', '$harga')";
+		$sql = "INSERT INTO tb_gaji VALUES ('', '$tgl', '$karyawan', '$ketebalan', '$ukuran', '$harga', '$jumlah')";
 		$result = mysqli_query($con, $sql);
 		if ($result) {
-			header("location: gaji.php");
+			header("location: gaji.php?hasil=berhasil");
 		}
 	}
 	if ($aksi == "edit_gaji") {
@@ -24,14 +25,15 @@
 		$karyawan = $_POST['karyawan'];
 		$ukuran = $_POST['ukuran'];
 		$harga = $_POST['harga'];
-		$bonus = $_POST['bonus'];
+		$ketebalan = $_POST['ketebalan'];
+		$jumlah = $ukuran * $harga;
 
-		$sql = "UPDATE tb_gaji SET karyawan='$karyawan', tgl='$tgl', tot_ukuran='$ukuran', harga='$harga', bonus='$bonus' WHERE id='$id'";
+		$sql = "UPDATE tb_gaji SET karyawan='$karyawan', tgl='$tgl', tot_ukuran='$ukuran', harga='$harga', ketebalan='$ketebalan', jumlah='$jumlah' WHERE id='$id'";
 		$result = mysqli_query($con,$sql);
 		if ($result) {
-			header("location: gaji.php");
+			header("location: gaji.php?hasil=berhasil");
 		} else {
-
+			header("location: gaji.php?hasil=gagal");
 		}
 	}
 
@@ -40,20 +42,15 @@
 
 		$result = mysqli_query($con,"DELETE FROM tb_gaji WHERE id='$id'");
 		if ($result) {
-			header("location: gaji.php");
+			header("location: gaji.php?hasil=berhasil");
 		} else {
+			header("location: gaji.php?hasil=gagal");
 		}
 	}
 
 	if ($aksi == "tambah_gaji_karyawan") {
-<<<<<<< HEAD
 		
 		$n = $_POST['jml']; // membaca jumlah data
-=======
-
-
-		$n = 7; // membaca jumlah data
->>>>>>> 2d77575dc1029fc27621a4b0dd8a88adc661c30d
 
 		// looping
 		for ($i=1; $i<=$n; $i++)
@@ -61,24 +58,18 @@
 		 $tgl = $_POST['tgl'.$i];
 		 $nama = $_POST['nama'.$i];
 		 $ukuran = $_POST['ukuran'.$i];
+		 $ketebalan = $_POST['ketebalan'.$i];
 		 $harga = $_POST['harga'.$i];
-<<<<<<< HEAD
+		 $jumlah = $harga * ukuran;
 	
-		 if ((!empty($tgl)) && (!empty($nama)) && (!empty($ukuran)) && (!empty($harga)))
+		 if ((!empty($tgl)) && (!empty($nama)) && (!empty($ukuran)) && (!empty($ketebalan)) && (!empty($harga)))
 		 {
-		 $query = "INSERT INTO tb_gaji (tgl, karyawan, tot_ukuran, harga) VALUES ('$tgl', '$nama', '$ukuran', '$harga')";
+		 $query = "INSERT INTO tb_gaji (tgl, karyawan, tot_ukuran, ketebalan, harga) VALUES ('$tgl', '$nama', '$ukuran', '$ketebalan', '$harga')";
 		 $hasil = mysqli_query($con, $query);	
-=======
-
-		 if ((!empty($no)) && (!empty($nama)) && (!empty($kode)) && (!empty($value)))
-		 {
-		 $query = "INSERT INTO tb_gaji (tgl, karyawan, tot_ukuran, harga) VALUES ('$tgl', '$nama', '$ukuran', '$harga')";
-		 $hasil = mysqli_query($conn, $query);
->>>>>>> 2d77575dc1029fc27621a4b0dd8a88adc661c30d
 		   if($hasil){
-			header("location: karyawan.php?hasil=berhasil");
+			header("location: gaji_karyawan_tambah.php?hasil=berhasil");
 			}else{
-				header("location: karyawan.php?hasil=gagal");
+				header("location: gaji_karyawan_tambah.php?hasil=gagal");
 			}
 		 }
 		}

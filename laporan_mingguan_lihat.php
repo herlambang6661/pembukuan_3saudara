@@ -95,30 +95,71 @@
                                             <div class="col-sm-6">
                                               <table class="table table-striped table-bordered table-hover">
                                                   <tr>
-                                                      <td colspan="4"><u><b>Rincian Pendapatan Per Hari</b></u></td>
+                                                      <td colspan="5"><u><b>Rincian Pendapatan Per Hari</b></u></td>
                                                   </tr>
                                                   <tr>
                                                     <td><b>Hari</b></td>
                                                     <td><b>Ukuran</b></td>
+                                                    <td><b>Ketebalan</b></td>
                                                     <td><b>Harga</b></td>
                                                     <td><b>Harga total</b></td>
                                                   </tr>
                                                   <?php
-                                                          $karyawan = $a['karyawan'];
-                                                          $queryb = "SELECT * FROM tb_gaji WHERE karyawan = '$karyawan'";
-                                                          $sqlb = mysqli_query($con, $queryb);
-                                                          while ($b = mysqli_fetch_array($sqlb)) {
+                                                    $karyawan = $a['karyawan'];
+                                                    $queryb = "SELECT * FROM tb_gaji WHERE karyawan = '$karyawan' AND tgl BETWEEN '$tanggalsb' AND '$tanggal'";
+                                                    $sqlb = mysqli_query($con, $queryb);
+                                                    while ($b = mysqli_fetch_array($sqlb)) {
+                                                              
                                                   ?>
                                                   <tr>
                                                       <td><?php $tgl2=date('D', strtotime($b['tgl'])); echo $dayList[$tgl2] ?></td>
                                                       <td><?php echo $b['tot_ukuran']?> meter</td>
+                                                      <td><?php echo $b['ketebalan']?></td>
                                                       <td>Rp. <?php echo $b['harga']?></td>
-                                                      <td>Rp. </td>
+                                                      <td>Rp. <?php echo $b['jumlah']; ?></td>
                                                   </tr>
-                                                  <?php }?>
+                                                  <?php }
+                                                    $queryc = "SELECT SUM(jumlah) AS totalJml FROM tb_gaji WHERE karyawan = '$karyawan' AND tgl BETWEEN '$tanggalsb' AND '$tanggal'";
+                                                    $sqlc = mysqli_query($con, $queryc);
+                                                    while ($c = mysqli_fetch_array($sqlc)) {
+                                                        $totalJml = $c['totalJml'];
+                                                    }
+                                                    ?>
                                                   <tr>
                                                     <td colspan="3"><h4><b>Total pendapatan</b></h4></td>
-                                                    <td><h4><b>Rp. </b></h4></td>
+                                                    <td colspan="2"><h4><b>Rp. <?php echo $totalJml ?></b></h4></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td colspan="5"></td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td colspan="5"><u><b>Rincian Tunjangan </b></u></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>THR</td>
+                                                    <td>:</td>
+                                                    <?php 
+                                                        $querytuna = "SELECT SUM(thr) AS tunthr FROM tb_tunjangan WHERE nama = '$karyawan' AND tanggal BETWEEN '$tanggalsb' AND '$tanggal'";
+                                                        $sqltuna = mysqli_query($con, $querytuna);
+                                                        while ($tuna = mysqli_fetch_array($sqltuna)) {
+                                                    ?>
+                                                    <td colspan="3"><?php $tun1 = $tuna['tunthr']; echo $tun1 + 0; ?></td>
+                                                    <?php } ?>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Uang Kerajinan</td>
+                                                    <td>:</td>
+                                                    <?php 
+                                                        $querytunb = "SELECT SUM(uang_kerajinan) AS kerajinan FROM tb_tunjangan WHERE nama = '$karyawan' AND tanggal BETWEEN '$tanggalsb' AND '$tanggal'";
+                                                        $sqltunb = mysqli_query($con, $querytunb);
+                                                        while ($tunb = mysqli_fetch_array($sqltunb)) {
+                                                    ?>
+                                                    <td colspan="3"><?php $tun2 = $tunb['kerajinan']; echo $tun2 + 0; ?></td>
+                                                    <?php } ?>
+                                                  </tr>
+                                                  <tr>
+                                                    <td colspan="3"><h4><b>Total Tunjangan</b></h4></td>
+                                                    <td colspan="2"><h4><b>Rp. <?php $tuntot = $tun1 + $tun2; echo $tuntot ?></b></h4></td>
                                                   </tr>
                                               </table>
                                             </div>
@@ -130,32 +171,72 @@
                                                 <tr>
                                                   <td>Potongan jamsostek</td>
                                                   <td width="10px">:</td>
-                                                  <td></td>
+                                                  <?php 
+                                                    $queryd = "SELECT SUM(potongan_jamsostek) AS jamS FROM tb_potongan WHERE nama = '$karyawan' AND tanggal BETWEEN '$tanggalsb' AND '$tanggal'";
+                                                    $sqld = mysqli_query($con, $queryd);
+                                                    while ($d = mysqli_fetch_array($sqld)) {
+                                                  ?>
+                                                  <td><?php $jams = $d['jamS']; echo $jams + 0; ?></td>
+                                                  <?php } ?>
                                                 </tr>
                                                 <tr>
                                                   <td>Potongan absen</td>
                                                   <td width="10px">:</td>
-                                                  <td></td>
+                                                  <?php 
+                                                    $querye = "SELECT SUM(potongan_absen) AS absen FROM tb_potongan WHERE nama = '$karyawan' AND tanggal BETWEEN '$tanggalsb' AND '$tanggal'";
+                                                    $sqle = mysqli_query($con, $querye);
+                                                    while ($e = mysqli_fetch_array($sqle)) {
+                                                  ?>
+                                                  <td><?php $absen = $e['absen']; echo $absen + 0; ?></td>
+                                                  <?php } ?>
                                                 </tr>
                                                 <tr>
                                                   <td>Potongan telat</td>
                                                   <td width="10px">:</td>
-                                                  <td></td>
+                                                  <?php 
+                                                    $queryf = "SELECT SUM(potongan_telat) AS telat FROM tb_potongan WHERE nama = '$karyawan' AND tanggal BETWEEN '$tanggalsb' AND '$tanggal'";
+                                                    $sqlf = mysqli_query($con, $queryf);
+                                                    while ($f = mysqli_fetch_array($sqlf)) {
+                                                  ?>
+                                                  <td><?php $telat = $f['telat']; echo $telat + 0; ?></td>
+                                                  <?php } ?>
                                                 </tr>
                                                 <tr>
                                                   <td>PPH</td>
                                                   <td width="10px">:</td>
-                                                  <td></td>
+                                                  <?php 
+                                                    $queryg = "SELECT SUM(pph) AS pajak FROM tb_potongan WHERE nama = '$karyawan' AND tanggal BETWEEN '$tanggalsb' AND '$tanggal'";
+                                                    $sqlg = mysqli_query($con, $queryg);
+                                                    while ($g = mysqli_fetch_array($sqlg)) {
+                                                  ?>
+                                                  <td><?php $pajak = $g['pajak']; echo $pajak + 0; ?></td>
+                                                  <?php }?>
                                                 </tr>
                                                 <tr>
                                                   <td>Kasbon</td>
                                                   <td width="10px">:</td>
-                                                  <td>Rp. </td>
+                                                  <?php 
+                                                    $queryh = "SELECT SUM(kasbon) AS bon FROM tb_potongan WHERE nama = '$karyawan' AND tanggal BETWEEN '$tanggalsb' AND '$tanggal'";
+                                                    $sqlh = mysqli_query($con, $queryh);
+                                                    while ($h = mysqli_fetch_array($sqlh)) {
+                                                  ?>
+                                                  <td><?php $bon = $h['bon']; echo $bon + 0; ?></td>
+                                                  <?php }?>
                                                 </tr>
                                                 <tr>
                                                   <td><h4><b>Total potongan</b></h4></td>
                                                   <td><h4><b>:</b></h4></td>
-                                                  <td><h4><b>Rp. </b></h4></td>
+                                                  <td><h4><b>Rp. <?php $tot_pot = $jams + $absen + $telat + $pajak + $bon; echo $tot_pot; ?></b></h4></td>
+                                                </tr>
+                                                <tr>
+                                                  <td> </td>
+                                                  <td> </td>
+                                                  <td> </td>
+                                                </tr>
+                                                <tr>
+                                                  <td><h4><b>Total Gaji</b></h4></td>
+                                                  <td><h4><b>:</b></h4></td>
+                                                  <td><h4><b>Rp. <?php $tot_gaji = ($totalJml + $tuntot) - $tot_pot; echo $tot_gaji ?></b></h4></td>
                                                 </tr>
                                               </table>
                                             </div>
@@ -172,28 +253,6 @@
                     <!-- ============================================================== -->
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <div class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <div class="text-md-right footer-links d-none d-sm-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- end footer -->
-            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
         <!-- end wrapper  -->

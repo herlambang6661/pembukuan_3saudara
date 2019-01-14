@@ -69,13 +69,14 @@
                                             <th><center>Nama Karyawan</center></th>
                                             <th><center>Total Ukuran</center></th>
                                             <th><center>Harga</center></th>
-                                            <th><center>Bonus</center></th>
+                                            <th><center>Jumlah</center></th>
+                                            <th><center>Ketebalan</center></th>
                                             <th><center>Aksi</center></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php
-                                        
+                                        $i = 1;
                                         $query = "SELECT * FROM tb_gaji";
                                         $sql = mysqli_query($con, $query);
                                         while ($a = mysqli_fetch_array($sql)) {
@@ -84,12 +85,13 @@
 
                                     ?>
                                         <tr class="event gradeX">
-                                            <td><center><?php echo $i=1;$i++; ?></center></td>
+                                            <td><center><?php echo $i;$i++; ?></center></td>
                                             <td><center><?php echo $dayList[$hari].", ".$tgl; ?></center></td>
                                             <td><center><?php echo $a['karyawan']; ?></center></td>
                                             <td><center><?php echo $a['tot_ukuran']; ?> Meter</center></td>
                                             <td><center><?php echo $a['harga']; ?></center></td>
-                                            <td><center><?php echo $a['bonus']; ?></center></td>
+                                            <td><center><?php echo $a['jumlah']; ?></center></td>
+                                            <td><center><?php echo $a['ketebalan']; ?></center></td>
                                             <td>
                                                 <center>
                                                 <a href="gaji_edit.php?id=<?php echo $a['id']; ?>"><button class="btn btn-outline-brand" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit Data"><i class="fa fa-edit"></i></button></a>

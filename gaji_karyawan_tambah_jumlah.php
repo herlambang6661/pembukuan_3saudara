@@ -37,7 +37,7 @@
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <div class="row">
-                    <div class="col-xl-10">
+                    <div class="col-xl-12">
                         <!-- ============================================================== -->
                         <!-- pageheader  -->
                         <!-- ============================================================== -->
@@ -86,33 +86,15 @@
 
                                             <?php
                                             $no = 1;
-<<<<<<< HEAD
                                             $n = $_GET['jml']; // membaca jumlah data
 
                                             for ($i=1; $i<=$n; $i++){
-=======
-                                            $n = $_POST['jml']; // membaca jumlah data
-
-                                            // $hari = array(
-                                            //     '1' => 'Sabtu',
-                                            //     '2' => 'Minggu',
-                                            //     '3' => 'Senin',
-                                            //     '4' => 'Selasa',
-                                            //     '5' => 'Rabu',
-                                            //     '6' => 'Kamis',
-                                            //     '7' => 'Jumat',
-                                            // );
-
-                                            for ($i=1; $i<=$n; $i++)
-                                            {
-                                            // $h = $hari[$i];
->>>>>>> 2d77575dc1029fc27621a4b0dd8a88adc661c30d
                                             echo "
                                                     <tr>
                                                     <td>$no</td>
 
                                                     <td>
-                                                        <input type='date' name='tgl".$i."' class='form-control'>
+                                                        <input type='date' name='tgl".$i."' class='form-control' required>
                                                     </td>
 
                                                     <td>
@@ -125,25 +107,29 @@
                                                     </td>
 
                                                     <td>
-<<<<<<< HEAD
-                                                        <input type name='harga".$i."' class='form-control' value='7000'>
-=======
-                                                        <select name='harga".$i."' class='form-control'>";
-                                                        $query = "SELECT * FROM tb_ketebalan";
-                                                        $data = mysqli_query($con,$query);
-                                                        while ($a = mysqli_fetch_array($data)) {
-                                                        echo "
-                                                                <option value='".$a['ketebalan']."' >".$a['ketebalan']."</option>
-                                                            ";
-                                                        }
+                                                        <select class='form-control' name='ketebalan'".$i.">".
+                                                                $queryb = 'SELECT * FROM tb_ketebalan';
+                                                                $datab = mysqli_query($con,$queryb);
+                                                                while ($b = mysqli_fetch_array($datab)) {
+                                                                    echo "<option value='".$b['ketebalan']."'> ".$b['ketebalan']."</option>";
+                                                                }
                                                         echo "
                                                         </select>
->>>>>>> 2d77575dc1029fc27621a4b0dd8a88adc661c30d
                                                     </td>
 
                                                     <td>
-                                                        <input type='hidden' name='nama".$i."' class='form-control' value='$karyawan'>
-                                                        <input type='text' class='form-control' value='' readonly>
+                                                        <select class='form-control' name='harga'".$i.">".
+                                                                $queryb = 'SELECT * FROM tb_ketebalan';
+                                                                $datab = mysqli_query($con,$queryb);
+                                                                while ($b = mysqli_fetch_array($datab)) {
+                                                                    echo "<option value='".$b['harga']."'> ".$b['harga']."</option>";
+                                                                }
+                                                            echo "
+                                                        </select>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type='hidden' name='harga".$i."' class='form-control' value='$karyawan'>
                                                     </td>
                                                 </tr>";
                                                 $no++;

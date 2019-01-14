@@ -74,7 +74,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label>Ukuran Total <small>( Gunakan Koma jika diperlukan )</small></label>
+                                                <label>Ukuran Total <small>( Gunakan titik sebagai koma )</small></label>
                                                 <div class="input-group mb-3">
                                                     <input type="text" name="ukuran" class="form-control" placeholder="Masukkan total ukuran dengan angka" required>
                                                     <div class="input-group-append"><span class="input-group-text">Meter</span></div>
@@ -94,8 +94,17 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label>Bonus <small>(Opsional)</small></label>
-                                                <input type="number" name="bonus" class="form-control" value="0">
+                                                <label>Ketebalan</label>
+                                                <select name="ketebalan" class="form-control" required>
+                                                    <option value="">-- Tentukan Ketebalan --</option>
+                                                    <?php                                 
+                                                        $queryk = "SELECT * FROM tb_ketebalan";
+                                                        $datak = mysqli_query($con,$queryk);
+                                                        while ($k = mysqli_fetch_array($datak)) {
+                                                    ?>
+                                                    <option value="<?php echo $k['ketebalan']; ?>"><?php echo $k['ketebalan']; ?></option>
+                                                        <?php } ?>
+                                                </select>
                                             </div>
                                             <div class="form-group"><br>
                                               <button class="btn btn-primary" type="submit">Simpan</button>

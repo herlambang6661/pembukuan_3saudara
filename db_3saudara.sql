@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Jan 2019 pada 05.53
+-- Generation Time: 14 Jan 2019 pada 09.52
 -- Versi Server: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -63,23 +63,19 @@ CREATE TABLE `tb_gaji` (
   `id` int(11) NOT NULL,
   `tgl` date NOT NULL,
   `karyawan` varchar(50) NOT NULL,
-  `bonus` int(11) NOT NULL,
+  `ketebalan` varchar(10) NOT NULL,
   `tot_ukuran` varchar(10) NOT NULL,
-  `harga` int(11) NOT NULL
+  `harga` int(11) NOT NULL,
+  `jumlah` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_gaji`
 --
 
-INSERT INTO `tb_gaji` (`id`, `tgl`, `karyawan`, `bonus`, `tot_ukuran`, `harga`) VALUES
-(1, '2018-12-26', 'Koko', 0, '9,4', 7000),
-(2, '2018-12-27', 'Dadan', 0, '12,2', 7000),
-(3, '2018-12-01', 'Irfan', 0, '9,4', 7000),
-(4, '2018-12-03', 'Irfan', 0, '12,2', 7000),
-(5, '2018-12-04', 'Irfan', 0, '7,3', 7000),
-(6, '2018-12-06', 'Irfan', 0, '13,88', 7000),
-(7, '2018-12-07', 'Irfan', 0, '6,29', 7000);
+INSERT INTO `tb_gaji` (`id`, `tgl`, `karyawan`, `ketebalan`, `tot_ukuran`, `harga`, `jumlah`) VALUES
+(11, '2019-01-01', 'Koko', 'STD', '12.2', 7000, '85400'),
+(12, '2019-01-02', 'Koko', 'STD', '7.8', 7000, '54600');
 
 -- --------------------------------------------------------
 
@@ -124,6 +120,37 @@ INSERT INTO `tb_ketebalan` (`id`, `ketebalan`, `harga`) VALUES
 (2, '1,7', 8000),
 (3, '2', 9000),
 (4, '3', 12000);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_potongan`
+--
+
+CREATE TABLE `tb_potongan` (
+  `id` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `nama` varchar(20) NOT NULL,
+  `potongan_jamsostek` int(11) NOT NULL,
+  `potongan_absen` int(11) NOT NULL,
+  `potongan_telat` int(11) NOT NULL,
+  `pph` int(11) NOT NULL,
+  `kasbon` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_tunjangan`
+--
+
+CREATE TABLE `tb_tunjangan` (
+  `id` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `nama` varchar(20) NOT NULL,
+  `thr` int(11) NOT NULL,
+  `uang_kerajinan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -182,6 +209,18 @@ ALTER TABLE `tb_ketebalan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_potongan`
+--
+ALTER TABLE `tb_potongan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_tunjangan`
+--
+ALTER TABLE `tb_tunjangan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_ukuran`
 --
 ALTER TABLE `tb_ukuran`
@@ -200,7 +239,7 @@ ALTER TABLE `tb_data_produksi`
 -- AUTO_INCREMENT for table `tb_gaji`
 --
 ALTER TABLE `tb_gaji`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `tb_karyawan`
 --
@@ -211,6 +250,16 @@ ALTER TABLE `tb_karyawan`
 --
 ALTER TABLE `tb_ketebalan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `tb_potongan`
+--
+ALTER TABLE `tb_potongan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tb_tunjangan`
+--
+ALTER TABLE `tb_tunjangan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tb_ukuran`
 --
