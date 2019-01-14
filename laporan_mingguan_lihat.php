@@ -239,7 +239,6 @@
                                                   <td><h4><b>Rp. <?php $tot_gaji = ($totalJml + $tuntot) - $tot_pot; echo $tot_gaji ?></b></h4></td>
                                                 </tr>
                                               </table><br /><br/>
-                                              
                                             </br/>
                                               <table class="table table-striped table-bordered table-hover">
                                                 <tr>
