@@ -60,6 +60,7 @@
                             <h5 class="card-header">Tabel Gaji</h5>
                             <div class="card-body">  
                             <a href="gaji_tambah.php" class="btn btn-info"><i class="fa fa-plus"></i> Input Gaji</a>
+                            <a href="gaji_karyawan_tambah.php" class="btn btn-info"><i class="fa fa-plus"></i> Input Gaji Berdasarkan Karyawan</a>
                                 <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="tabel1"><br><br>
                                     <thead>

@@ -107,7 +107,7 @@
                                                     </td>
 
                                                     <td>
-                                                        <select class='form-control' name='ketebalan'".$i.">".
+                                                        <select class='form-control' name='ketebalan".$i."'>".
                                                                 $queryb = 'SELECT * FROM tb_ketebalan';
                                                                 $datab = mysqli_query($con,$queryb);
                                                                 while ($b = mysqli_fetch_array($datab)) {
@@ -118,7 +118,7 @@
                                                     </td>
 
                                                     <td>
-                                                        <select class='form-control' name='harga'".$i.">".
+                                                        <select class='form-control' name='harga".$i."'>".
                                                                 $queryb = 'SELECT * FROM tb_ketebalan';
                                                                 $datab = mysqli_query($con,$queryb);
                                                                 while ($b = mysqli_fetch_array($datab)) {
@@ -126,10 +126,6 @@
                                                                 }
                                                             echo "
                                                         </select>
-                                                    </td>
-
-                                                    <td>
-                                                        <input type='hidden' name='harga".$i."' class='form-control' value='$karyawan'>
                                                     </td>
                                                 </tr>";
                                                 $no++;

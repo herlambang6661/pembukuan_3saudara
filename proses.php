@@ -60,11 +60,11 @@
 		 $ukuran = $_POST['ukuran'.$i];
 		 $ketebalan = $_POST['ketebalan'.$i];
 		 $harga = $_POST['harga'.$i];
-		 $jumlah = $harga * ukuran;
+		 $jumlah = $_POST['harga'.$i] * $_POST['ukuran'.$i];
 	
 		 if ((!empty($tgl)) && (!empty($nama)) && (!empty($ukuran)) && (!empty($ketebalan)) && (!empty($harga)))
 		 {
-		 $query = "INSERT INTO tb_gaji (tgl, karyawan, tot_ukuran, ketebalan, harga) VALUES ('$tgl', '$nama', '$ukuran', '$ketebalan', '$harga')";
+		 $query = "INSERT INTO tb_gaji (tgl, karyawan, tot_ukuran, ketebalan, harga, jumlah) VALUES ('$tgl', '$nama', '$ukuran', '$ketebalan', '$harga', '$jumlah')";
 		 $hasil = mysqli_query($con, $query);	
 		   if($hasil){
 			header("location: gaji_karyawan_tambah.php?hasil=berhasil");
