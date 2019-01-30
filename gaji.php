@@ -58,7 +58,7 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <h5 class="card-header">Tabel Gaji</h5>
-                            <div class="card-body">  
+                            <div class="card-body">
                             <a href="gaji_tambah.php" class="btn btn-info"><i class="fa fa-plus"></i> Input Gaji</a>
                             <a href="gaji_karyawan_tambah.php" class="btn btn-info"><i class="fa fa-plus"></i> Input Gaji Berdasarkan Karyawan</a>
                                 <div class="table-responsive">
@@ -81,7 +81,7 @@
                                         $query = "SELECT * FROM tb_gaji";
                                         $sql = mysqli_query($con, $query);
                                         while ($a = mysqli_fetch_array($sql)) {
-                                            $tgl = tanggal_indo($a['tgl']); 
+                                            $tgl = tanggal_indo($a['tgl']);
                                             $hari = date('D', strtotime($a['tgl']));
 
                                     ?>
@@ -138,28 +138,6 @@
                     <!-- ============================================================== -->
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <div class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <div class="text-md-right footer-links d-none d-sm-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- end footer -->
-            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
         <!-- end wrapper  -->

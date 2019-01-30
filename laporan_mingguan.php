@@ -60,7 +60,7 @@ include 'lib_header.php';
                                         <label for="tgl">Pilih Tanggal</label>
                                         <input type="date" name="tgl" class="form-control">
                                     </div>
-                                    <div class="form-group">                                
+                                    <div class="form-group">
                                         <input type="submit" class="btn btn-primary btn-block">
                                     </div>
                                 </form>
@@ -83,13 +83,13 @@ include 'lib_header.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    
+
                                     <?php
 
                                         $query = "SELECT * FROM tb_gaji";
                                         $sql = mysqli_query($con, $query);
                                         while ($a = mysqli_fetch_array($sql)) {
-                                            $tgl = tanggal_indo($a['tgl']); 
+                                            $tgl = tanggal_indo($a['tgl']);
                                             $hari = date('D', strtotime($a['tgl']));
 
                                     ?>
@@ -142,28 +142,6 @@ include 'lib_header.php';
                     <!-- ============================================================== -->
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <div class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <div class="text-md-right footer-links d-none d-sm-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- end footer -->
-            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
         <!-- end wrapper  -->

@@ -55,7 +55,7 @@
                                 <div class="card">
                                     <h5 class="card-header">Input Gaji Berdasarkan Karyawan</h5>
                                     <div class="card-body">
-                                    
+
                                     <?php
                                         if (isset($_POST['lanjut']))
                                         {
@@ -89,7 +89,7 @@
                                                 <label for="inputText3" class="col-form-label">Nama karyawan</label>
                                                 <select name="karyawan" class="form-control" required>
                                                     <option value="">-- Pilih Karyawan --</option>
-                                                    <?php                                 
+                                                    <?php
                                                         $query = "SELECT * FROM tb_karyawan";
                                                         $data = mysqli_query($con,$query);
                                                         while ($a = mysqli_fetch_array($data)) {
@@ -123,28 +123,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <div class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <div class="text-md-right footer-links d-none d-sm-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- end footer -->
-            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
         <!-- end wrapper  -->

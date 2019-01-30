@@ -1,4 +1,26 @@
-             
+
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <div class="footer">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12">
+              </div>
+              <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
+                  <div class="text-md-right footer-links d-none d-sm-block">
+                    Copyright © 2019 CV 3 Saudara. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                      <!-- <a href="javascript: void(0);">About</a>
+                      <a href="javascript: void(0);">Support</a>
+                      <a href="javascript: void(0);">Contact Us</a> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end footer -->
+    <!-- ============================================================== -->
     <!-- Optional JavaScript -->
     <!-- jquery 3.3.1 -->
     <script src="assets/vendor/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
