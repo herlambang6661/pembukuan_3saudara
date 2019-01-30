@@ -127,7 +127,7 @@
                               <div id="submenu-50" class="collapse submenu" style="">
                                 <ul class="nav flex-column">
                                       <li class="nav-item">
-                                          <a class="nav-link" href="grafik-ukuran.php">Lihat Grafik Ukuran</a>
+                                          <a class="nav-link" href="grafik-gaji.php">Lihat Grafik Gaji</a>
                                       </li>
                                       <li class="nav-item">
                                           <a class="nav-link" href="#">Lihat Grafik Ketebalan</a>

@@ -22,6 +22,7 @@
     <!-- end footer -->
     <!-- ============================================================== -->
     <!-- Optional JavaScript -->
+    <!-- Charts -->
     <!-- jquery 3.3.1 -->
     <script src="assets/vendor/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
     <!-- bootstap bundle js -->
